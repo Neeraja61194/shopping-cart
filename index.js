@@ -1,12 +1,16 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
-// Middleware
+//Middlewares
 app.set('view engine', 'pug')
-//Modules
-const entry_point = require('./entry-point')
+app.use(express.static('public'))
 
-app.get('/', entry_point)
+//Modules
+const home = require('./routes/home')
+const categories = require('./routes/categories')
+
+app.get('/', home)
+app.get('/categories', categories)
 
 app.listen(port, () => console.log(`Shopping cart running on port ${port}!`))
