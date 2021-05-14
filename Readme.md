@@ -1,3 +1,1 @@
-This is a shopping cart website
-
-Using NodeJS, Express, Pug and MongoDB 
+A basic shopping cart website created using NodeJS, Express, Pug and MongoDB. 
